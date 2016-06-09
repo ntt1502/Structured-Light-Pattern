@@ -1,5 +1,5 @@
 block_size = 20;
-space = 4;
+space = 0;
 
 W = pattern2D();
 N = ones(16*block_size + 15*space, 64*block_size + 63*space,3);
@@ -14,8 +14,8 @@ blockC = zeros(block_size,block_size,3);
 blockC(:,:,3) = 1;
 
 blockD = zeros(block_size,block_size,3);
-blockD(:,:,2) = 1;
 blockD(:,:,3) = 1;
+blockD(:,:,2) = 1;
 
 x = 0;
 y = 0;
@@ -36,5 +36,6 @@ for i = 1:16
     end
     x = x + 1;
 end
+[a,b,c]=size(N);
 
 imshow(N);
